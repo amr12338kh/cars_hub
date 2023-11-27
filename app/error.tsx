@@ -35,7 +35,7 @@ const error = () => {
                         containerStyles="bg-primary-blue text-white rounded-full" 
                         handleClick={handelReset}
                     />
-                    <Link href="/">
+                    <Link href="/" onClick={handelReset}>
                         <CustomButton 
                             title="Go Back Home"
                             containerStyles="text-primary-blue rounded-full bg-whit border"

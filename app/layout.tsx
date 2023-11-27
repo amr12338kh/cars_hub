@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
 import './globals.css'
 import { Navbar, Footer } from '@/components'
@@ -17,6 +18,7 @@ export default function RootLayout({
         <body className="relative">
           <Navbar />
           {children}
+          <Analytics />
           <Footer/>
         </body>
     </html>
