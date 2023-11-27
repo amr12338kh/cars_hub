@@ -29,7 +29,3 @@ This is a training on a small e-commerce website "carshub" build with everything
 ## How do I deploy this?
 
 Follow the deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel)
-
-## Contributing
-
-Contributions are welcome! Please open an issue if you have any questions or suggestions. Your contributions will be acknowledged. See the [contributing guide](./CONTRIBUTING.md) for more information.
