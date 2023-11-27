@@ -33,7 +33,7 @@ const NotFound = () => {
                         containerStyles="bg-primary-blue text-white rounded-full" 
                         handleClick={handelReset}
                     />
-                    <Link href="/" onClick={handelReset}>
+                    <Link href="./">
                         <CustomButton 
                             title="Go Back Home"
                             containerStyles="text-primary-blue rounded-full bg-whit border"
