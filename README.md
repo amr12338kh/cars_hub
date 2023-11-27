@@ -1,4 +1,4 @@
-This is a training on a small e-commerce website "carshub" build with everything new in Next.js 14
+This is an cars store website "carshub" build with everything new in Next.js 14
 
 ## Tech Stack
 
