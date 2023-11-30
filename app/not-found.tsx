@@ -2,12 +2,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { CustomButton } from "@/components"
+import { resetSearchParams } from "@/utils"
+import { useRouter } from "next/navigation"
 
 const NotFound = () => {
 
-    const handelReset = () => {
-        location.reload()
-    }
+    const router = useRouter()
 
   return (
     <section className="flex flex-col items-center text-center w-full h-[100vh] justify-center p-6">
@@ -31,14 +31,13 @@ const NotFound = () => {
                     <CustomButton
                         title="Try again"
                         containerStyles="bg-primary-blue text-white rounded-full" 
-                        handleClick={handelReset}
+                        handleClick={(e) => router.refresh()}
                     />
-                    <Link href="./">
-                        <CustomButton 
-                            title="Go Back Home"
-                            containerStyles="text-primary-blue rounded-full bg-whit border"
-                        />
-                    </Link>
+                    <CustomButton 
+                        handleClick={(e) => router.back()}
+                        title="Go Back"
+                        containerStyles="text-primary-blue rounded-full bg-whit border"
+                    />
                 </div>
             </div>
         </div>

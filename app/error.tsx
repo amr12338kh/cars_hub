@@ -2,13 +2,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { CustomButton } from "@/components"
+import { useRouter } from "next/navigation"
 
 const error = () => {
 
-    const handelReset = () => {
-        location.reload()
-    }
-
+    const router = useRouter()
 
   return (
     <section className="flex flex-col items-center text-center w-full h-[100vh] justify-center p-6">
@@ -33,14 +31,13 @@ const error = () => {
                     <CustomButton
                         title="Try again"
                         containerStyles="bg-primary-blue text-white rounded-full" 
-                        handleClick={handelReset}
+                        handleClick={(e) => router.refresh()}
                     />
-                    <Link href="./">
-                        <CustomButton 
-                            title="Go Back Home"
-                            containerStyles="text-primary-blue rounded-full bg-whit border"
-                        />
-                    </Link>
+                    <CustomButton 
+                        title="Go Back"
+                        containerStyles="text-primary-blue rounded-full bg-whit border"
+                        handleClick={(e) => router.back()}
+                    />
                 </div>
             </div>
         </div>
