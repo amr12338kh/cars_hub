@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import Link from "next/link"
 import { CustomButton } from "@/components"
 import { useRouter } from "next/navigation"
 
@@ -19,7 +18,6 @@ const error = () => {
                     width={400}
                     height={400}
                     className=" object-cover"
-
                 />
             </div>
             <div className="flex flex-col gap-8">
@@ -36,7 +34,7 @@ const error = () => {
                     <CustomButton 
                         title="Go Back"
                         containerStyles="text-primary-blue rounded-full bg-whit border"
-                        handleClick={(e) => router.back()}
+                        handleClick={(e) => router.replace("./")}
                     />
                 </div>
             </div>

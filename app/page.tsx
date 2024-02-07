@@ -5,24 +5,19 @@ import {
   CarCard,
   ShowMore,
   ResetFilter,
-  CardsLoading
 } from "@/components"
-
 import { fuels, yearsOfProduction } from "@/constants";
-import { SearchParamsProps } from "@/types";
-import { fetchCars } from "@/utils"
-import { Suspense } from "react";
+import { CarProps, SearchParamsProps } from "@/types";
+import { fetchCars } from "@/utils";
 
 export default async function Home({ searchParams }: SearchParamsProps) {
-
-  const thisYear = new Date().getUTCFullYear() // Get the year
 
   // Get the data
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || thisYear,
+    year: searchParams.year || 2023,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 8,
     model: searchParams.model || "",
   });
 
@@ -70,26 +65,24 @@ export default async function Home({ searchParams }: SearchParamsProps) {
         ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
+              {allCars?.map((car: CarProps) => (
                 <>
-                <Suspense fallback={<CardsLoading />}>
                   <CarCard car={car} />
-                </Suspense>
                 </>
               ))}
             </div>
 
             {/* Show More Button */}
             <ShowMore 
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
+              pageNumber={(searchParams.limit || 8) / 8}
+              isNext={(searchParams.limit || 8) > allCars.length}
             />
           </section>
         )
         : (
           <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">
-              Oops, no results
+              Oops!, no results
             </h2>
             <p>{allCars?.message}</p>
           </div>

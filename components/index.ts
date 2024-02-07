@@ -9,7 +9,6 @@ import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
 import ShowMore from "./ShowMore";
 import ResetFilter from "./ResetFilter";
-import CardsLoading from "./CardsLoading";
 
 export {
     Navbar,
@@ -23,5 +22,4 @@ export {
     CarDetails,
     ShowMore,
     ResetFilter,
-    CardsLoading,
 }

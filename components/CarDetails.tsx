@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import { Fragment } from "react";
-
 import { Dialog, Transition } from "@headlessui/react";
-
 import { CarDetailsProps } from "@/types";
 import { generateCarImageUrl } from "@/utils";
-
 
 const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
   return (

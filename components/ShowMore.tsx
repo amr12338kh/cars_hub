@@ -12,7 +12,7 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
 
     const handelNavigation = () => {
         // Calculate the new limit based on the page number and navigation type
-        const newLimit = (pageNumber + 1) * 10;
+        const newLimit = (pageNumber + 1) * 8;
 
         // Update the "limit" search parameter in the URL with the new value
         const newPathName = updateSearchParams("limit", `${newLimit}`)
@@ -21,7 +21,7 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
     }
 
   return (
-    <div className="w-full flex-center gap-5 mt-10">
+    <div className="w-full flex-center gap-5 mt-10">    
         {!isNext && (
             <CustomButton 
                 title="Show More"
@@ -29,7 +29,7 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
                 containerStyles="bg-primary-blue rounded-full text-white"
                 handleClick={handelNavigation}
             />
-        )}
+          )}
     </div>
   )
 }
